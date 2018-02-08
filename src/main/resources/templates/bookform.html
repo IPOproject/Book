@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+</head>
+<body>
+
+<form
+      th:action="@{/process}"
+      th:object="${book}"
+      method="post">
+
+    Title :<input type ="text" th:field="${book.title}"/>
+    Author :<input type ="text" th:field="${book.author}"/>
+    Year :<input type ="text" th:field="${book.year}"/>
+    ISBN :<input type ="text" th:field="${book.isbn}"/>
+    Image :<input type ="text" th:field="${book.image}"/>
+
+    <!--Instructor :<input type ="text" th:field=" *{instructor}"/>-->
+   <!---->
+
+    <!--Descreption :<textarea row ="3" th:field=" *{description}"/>-->
+    <!---->
+
+    <!--Credits :<input type ="text" th:field=" *{credit}"/>-->
+
+    <input type="submit" value="Submit"/>
+
+</form>
+
+</body>
+</html>

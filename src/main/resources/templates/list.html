@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+</head>
+<body>
+<a herf ="/">Show All Books </a> <br/>
+
+<li>Introduce Java Programming</li>
+<li> Paul</li>
+<li>2009</li>
+<li> 64564898</li>
+
+<li> Image is not available</li>
+
+
+<!--Title :<span th:text= " ${book.title}"> </span><br/>-->
+
+
+<a href="/add"> Add a Book</a><br />
+<div th:each="book : ${books}">
+    <h4 th:inline="text">[[${book.title}]] </h4>
+    <h4 th:inline="text">[[${book.author}]]  [[${book.year}]]</h4>
+    <h4 th:inline="text">[[${book.isbn}]] </h4>
+    <h4 th:inline="text">[[${book.image}]] </h4>
+</div>
+<!--Author :<span th:text= " ${book.author}"> </span><br/>-->
+<!--Year:<span th:text= " ${book.year}"> </span><br/>-->
+<!--ISBN:<span th:text= " ${book.isbn}"> </span><br/>-->
+
+<!--Images:<span th:text= " ${book.image}"> </span><br/>-->
+
+
+</body>
+</html>
