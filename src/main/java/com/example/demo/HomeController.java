@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -39,5 +40,28 @@ public class HomeController {
         return "redirect:/";
 
     }
+
+
+    @RequestMapping("/borrowbooks/{id}")
+    public String showCourse(@PathVariable("id") long id, Model model) {
+        model.addAttribute("course", bookRepository.findOne(id));
+        return "bookform";
+
+
     }
+
+    @RequestMapping("/returnbooks/{id}")
+    public String updateCourse(@PathVariable("id") long id, Model model) {
+        model.addAttribute("course", bookRepository.findOne(id));
+        return "bookform";
+
+    }
+
+}
+
+
+
+
+
+
 
