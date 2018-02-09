@@ -45,20 +45,20 @@ public class HomeController {
         model.addAttribute("books", bookRepository.findAll());
         return "index";
     }
-   /*@RequestMapping("/borrowbooks/{id}")
-    public String showbook(@PathVariable("id") long id, Model model) {
+   @RequestMapping("/borrowbook/{id}")
+    public String borrowbook(@PathVariable("id") long id, Model model) {
         model.addAttribute("books", bookRepository.findOne(id));
         return "list";
 
 
     }
 
-    @RequestMapping("/returnbooks/{id}")
-    public String updatebook(@PathVariable("id") long id, Model model) {
+    @RequestMapping("/returnbook/{id}")
+    public String returnbook(@PathVariable("id") long id, Model model) {
         model.addAttribute("books", bookRepository.findOne(id));
         return "list";
 
-    }*/
+    }
 
 }
 

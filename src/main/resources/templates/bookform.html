@@ -36,6 +36,8 @@
     </div>
 </nav>
 <div class="container">
+    <div class="row">
+        <div class="col-md">
 <form
       th:action="@{/process}"
       th:object="${book}"
@@ -48,7 +50,7 @@
     Image :<input type ="text" th:field="${book.image}"/>
 
 
-    <select th:field="${book.bookinfo}">
+    <div class="container"> <select th:field="${book.bookinfo}">
         <option value="Book has been borrowed">Borrow</option>
         <option value="Book has been Returned">Return</option>
         <option value="Book is available">Book List</option>
@@ -56,35 +58,37 @@
     </select>
 
 
-    <input type="submit" value="Submit"/>
+        <div class="container">  <input type="submit" value="Submit"/></div>
 
-
+    </div>
 </form>
+
+        </div>
+    </div>
+</div>
+
 <br/>
     <br/>
     <br/>
     <br/>
     <br/>
     <br/>
-   <div class="style color: blue"><h2>List of Books with ISBN </h2>
-    <ul>
-        <li><data value="21053">Java Programming</data></li>
-        <li><data value="21054">Database Management</data></li>
-        <li><data value="21055"></data>Data Structure</li>
-    </ul>
 
-</div>
     <div class="container">
         <div class="row">
-            <div class="col-md">
-                <h2 class="text-center"><mark> Find the Books</mark></h2>
+            <div class="col-lg">
+
+
+                <p>List of books calculate here wheather add or reduce one </p>
+
+                <form oninput="x.value=parseInt(a.value)+parseInt(b.value)">0
+                    <input type="amount of books" id="a" value="50"/>100
+                    +<input type="number" id="b" value="50"/>
+                    =<output name="x" for="a b"></output>
+                </form>
             </div>
-            <div class="col-md">
-                <h2 class="text-center"><mark>Borrow from the library</mark></h2>
-            </div>
-            <div class="col-md">
-                <h2 class="text-center"> <mark>Return it when you are Done</mark></h2>
-            </div>
+
+
         </div>
     </div>
 
@@ -92,7 +96,6 @@
         <h1>Good Luck!</h1>
     </div>
 
-</div>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

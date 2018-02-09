@@ -25,14 +25,45 @@
             <a href="/add">Add Book </a>
         </div>
         <div class="navbar-header">
-            <a href="/borrow">Borrow Book </a>
+            <a href="/add">Borrow Book </a>
         </div>
         <div class="navbar-header">
-            <a href="/return">Return Book</a>
+            <a href="/add">Return Book</a>
         </div>
 
     </div>
 </nav>
+
+
+<div class="container "><table>
+
+
+
+    <tr>
+
+
+
+        <th>title</th>
+        <th>author</th>
+        <th>year</th>
+        <th>ISBN</th>
+
+    </tr>
+
+    <tr th:each="book : ${books}">
+        <td th:text="${book.title}"> </td>
+        <td th:text="${book.author}"> </td>
+        <td th:text="${book.isbn}"> </td>
+        <td>
+
+            <a th:href="@{/borrow/{id}(id=${book.id})}"> Borrow</a> -
+            <a th:href="@{/return/{id}(id=${book.id})}"> Return</a> -
+
+
+        </td>
+    </tr>
+</table>
+</div>
 
 <p>Show All the Books</p>
 
@@ -41,13 +72,6 @@
 <li>2009</li>
 <li> 64564898</li>
 
-<h2>List of books calculate here wheather add or reduce one </h2>
-
-<form oninput="x.value=parseInt(a.value)+parseInt(b.value)">0
-    <input type="amount of books" id="a" value="50">100
-    +<input type="number" id="b" value="50">
-    =<output name="x" for="a b"></output>
-</form>
 
 
 

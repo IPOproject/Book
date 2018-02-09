@@ -6,11 +6,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
 
     <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet"/>
-    <link href="../static/css/stylesheet.css" type="text/css" rel="stylesheet"/>
-    <link href="./css/stylesheet.css" rel="stylesheet"/>
+    <link href="/static/css/stylesheet.css" type="text/css" rel="stylesheet"/>
+    <link href="/css/stylesheet.css" rel="stylesheet"/>
 </head>
 <body>
-<body> <body background=".../images/library.jpg"></body></body>
+<body background=".../images/library.jpg"></body>
 <div class="container">
     <h1>JBC Library</h1>
 </div>
@@ -36,9 +36,11 @@
 
     </div>
 </nav>
+<div align="right">
 
+<img src="images/b.jpg" alt="Flag" width="500px"></img>
 
-
+</div>
 
 
 
@@ -50,9 +52,44 @@
     <h4 th:inline="text">[[${book.isbn}]] </h4>
     <h4 th:inline="text">[[${book.image}]] </h4>
     <h4 th:inline="text">[[${book.bookinfo}]] </h4>
+
 </div>
+<div class="container">
+    <div class="row">
+<table>
+
+<p> List the Book Here</p><br/>
+
+    <div>
+
+    <tr th:each="book : ${books}">
+        <td th:text="${book.title}"> </td><br/>
+        <td th:text="${book.author}"> </td>
+        <td>
+
+            <a th:href="@{/borrowbook/{id}(id=${book.id})}"> Borrow</a> -
+            <a th:href="@{/returnbook/{id}(id=${book.id})}"> Return</a>
 
 
+        </td>
+    </tr>
+    </div>
+</table>
+
+    </div>
+    <div>
+
+<li>Introduce Java Programming</li>
+<li> Paul</li>
+<li>2009</li>
+<li> 64564898</li>
+        </div>
+    </div>
+
+
+
+
+<!--<a th:href="@{/delete/{id}(id=${course.id})}"> Delete</a>-->
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
