@@ -21,16 +21,16 @@
 
         </div>
         <div class="navbar-header">
-            <a href="/list">Home</a>
+            <a th:href="@{/}">Home</a>
         </div>
         <div class="navbar-header">
-            <a href="/add">Add Book </a>
+            <a th:href="@{/add}">Add Book </a>
         </div>
         <div class="navbar-header">
-            <a href="/borrow">Borrow Book </a>
+            <a th:href="@{/add}">Borrow Book </a>
         </div>
         <div class="navbar-header">
-            <a href="/return">Return Book</a>
+            <a th:href="@{/add}">Return Book</a>
         </div>
 
     </div>
@@ -79,6 +79,7 @@
     <h4 th:inline="text">[[${book.author}]]  [[${book.year}]]</h4>
     <h4 th:inline="text">[[${book.isbn}]] </h4>
     <h4 th:inline="text">[[${book.image}]] </h4>
+    <h4 th:inline="text">[[${book.bookinfo}]] </h4>
 </div>
 <!--Author :<span th:text= " ${book.author}"> </span><br/>-->
 <!--Year:<span th:text= " ${book.year}"> </span><br/>-->

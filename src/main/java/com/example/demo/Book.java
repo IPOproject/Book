@@ -39,6 +39,9 @@ public class Book {
   @NotNull
    @NotEmpty
    private String image;
+    @NotNull
+    @NotEmpty
+    private String bookinfo;
 
     public Book() {
     }
@@ -51,9 +54,21 @@ public class Book {
         this.year = year;
     }
 
-    public Book(String title) {
+    public Book(String title, String author, String year, String isbn, String image, String bookinfo) {
         this.title = title;
+        this.author = author;
+        this.year = year;
+        this.isbn = isbn;
+        this.image = image;
+        this.bookinfo = bookinfo;
+    }
 
+    public String getBookinfo() {
+        return bookinfo;
+    }
+
+    public void setBookinfo(String bookinfo) {
+        this.bookinfo = bookinfo;
     }
 
     public String getAuthor() {
