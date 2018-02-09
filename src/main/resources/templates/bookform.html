@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="www.thymeleaf.org">
+<html lang="en" xmlns:th="www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8" />
     <title>Title</title>
@@ -11,11 +11,12 @@
     <link href="./css/stylesheet.css" rel="stylesheet"/>
 </head>
 <body>
+
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
 
-        </div>
+       </div>
         <div class="navbar-header">
             <a href="/list">Home</a>
         </div>
@@ -26,10 +27,10 @@
             <a href="/add">list of Books </a>
         </div>
         <div class="navbar-header">
-            <a href="/borrow">Borrow Book </a>
+            <a href="/add">Borrow Book </a>
         </div>
         <div class="navbar-header">
-            <a href="/return">Return Book</a>
+            <a href="/add">Return Book</a>
         </div>
 
     </div>
@@ -49,24 +50,48 @@
 
     <select th:field="${book.bookinfo}">
         <option value="Book has been borrowed">Borrow</option>
-        <option value="book is in the List">Return</option>
+        <option value="Book has been Returned">Return</option>
         <option value="Book is available">Book List</option>
-        <option value="Need to check">Recheck</option>
+        <option value="Added the Book">Add Book</option>
     </select>
-    <!--Instructor :<input type ="text" th:field=" *{instructor}"/>-->
-   <!---->
 
-    <!--Descreption :<textarea row ="3" th:field=" *{description}"/>-->
-    <!---->
-
-    <!--Credits :<input type ="text" th:field=" *{credit}"/>-->
 
     <input type="submit" value="Submit"/>
 
 
-
-
 </form>
+<br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+   <div class="style color: blue"><h2>List of Books with ISBN </h2>
+    <ul>
+        <li><data value="21053">Java Programming</data></li>
+        <li><data value="21054">Database Management</data></li>
+        <li><data value="21055"></data>Data Structure</li>
+    </ul>
+
+</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md">
+                <h2 class="text-center"><mark> Find the Books</mark></h2>
+            </div>
+            <div class="col-md">
+                <h2 class="text-center"><mark>Borrow from the library</mark></h2>
+            </div>
+            <div class="col-md">
+                <h2 class="text-center"> <mark>Return it when you are Done</mark></h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="jumbotron text-center">
+        <h1>Good Luck!</h1>
+    </div>
+
 </div>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

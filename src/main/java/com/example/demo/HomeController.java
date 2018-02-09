@@ -38,26 +38,30 @@ public class HomeController {
         }
         bookRepository.save(book);
         return "redirect:/";
-
     }
 
-
-    @RequestMapping("/borrowbooks/{id}")
-    public String showCourse(@PathVariable("id") long id, Model model) {
-        model.addAttribute("course", bookRepository.findOne(id));
-        return "bookform";
+    @RequestMapping("/list")
+    public String findBooks(Model model) {
+        model.addAttribute("books", bookRepository.findAll());
+        return "index";
+    }
+   /*@RequestMapping("/borrowbooks/{id}")
+    public String showbook(@PathVariable("id") long id, Model model) {
+        model.addAttribute("books", bookRepository.findOne(id));
+        return "list";
 
 
     }
 
     @RequestMapping("/returnbooks/{id}")
-    public String updateCourse(@PathVariable("id") long id, Model model) {
-        model.addAttribute("course", bookRepository.findOne(id));
-        return "bookform";
+    public String updatebook(@PathVariable("id") long id, Model model) {
+        model.addAttribute("books", bookRepository.findOne(id));
+        return "list";
 
-    }
+    }*/
 
 }
+
 
 
 
